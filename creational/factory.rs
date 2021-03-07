@@ -1,4 +1,6 @@
-//! Factory method creational design pattern allows creating objects without having to specify the exact type of the object that will be created.
+//! Factory method creational design pattern allows
+//! creating objects without having to specify the
+//! exact type of the object that will be created.
 
 trait Shape {
     fn draw(&self);
@@ -25,9 +27,13 @@ impl Shape for Circle {
     }
 }
 
+trait ProductFactory {
+    fn create_product(s: &ShapeType) -> Box<dyn Shape>;
+}
+
 struct ShapeFactory;
-impl ShapeFactory {
-    fn new_shape(s: &ShapeType) -> Box<dyn Shape> {
+impl ProductFactory for ShapeFactory {
+    fn create_product(s: &ShapeType) -> Box<dyn Shape> {
         match s {
             ShapeType::Circle => Box::new(Circle {}),
             ShapeType::Rectangle => Box::new(Rectangle {}),
@@ -36,9 +42,9 @@ impl ShapeFactory {
 }
 
 fn main() {
-    let shape = ShapeFactory::new_shape(&ShapeType::Circle);
+    let shape = ShapeFactory::create_product(&ShapeType::Circle);
     shape.draw(); // output: draw a circle!
 
-    let shape = ShapeFactory::new_shape(&ShapeType::Rectangle);
+    let shape = ShapeFactory::create_product(&ShapeType::Rectangle);
     shape.draw(); // output: draw a rectangle!
 }
