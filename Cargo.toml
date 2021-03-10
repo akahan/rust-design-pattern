@@ -49,6 +49,22 @@ name = "chain_of_responsibility"
 path = "./behavioral/chain_of_responsibility.rs"
 
 [[bin]]
+name = "bridge"
+path = "./structural/bridge.rs"
+
+[[bin]]
+name = "composite"
+path = "./structural/composite.rs"
+
+[[bin]]
+name = "facade"
+path = "./structural/facade.rs"
+
+[[bin]]
+name = "flyweight"
+path = "./structural/flyweight.rs"
+
+[[bin]]
 name = "adapter"
 path = "./structural/adapter.rs"
 
