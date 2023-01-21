@@ -10,14 +10,14 @@ enum Type {
 struct ProductA;
 impl Product for ProductA {
     fn turn_on(&self) {
-        println!("didididididi~~~");
+        println!("ProductA turned on");
     }
 }
 
 struct ProductB;
 impl Product for ProductB {
     fn turn_on(&self) {
-        println!("kakakakakakak~~~");
+        println!("ProductB turned on");
     }
 }
 
