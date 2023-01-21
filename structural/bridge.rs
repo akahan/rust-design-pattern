@@ -5,14 +5,14 @@ trait Implementor {
 struct ParenImpl;
 impl Implementor for ParenImpl {
     fn decorate(&self, msg: String) -> String {
-        "(".to_string() + &msg + &")".to_string()
+        format!("({msg})")
     }
 }
 
 struct BracketImpl;
 impl Implementor for BracketImpl {
     fn decorate(&self, msg: String) -> String {
-        "{".to_string() + &msg + &"}".to_string()
+        format!("{{{msg}}}")
     }
 }
 
@@ -49,11 +49,8 @@ impl<'a> RefinedAbstraction<'a> {
 }
 
 fn main() {
-    let paren_impl = &ParenImpl;
-    let bracket_impl = &BracketImpl;
-
-    let abst_p = RefinedAbstraction::new(paren_impl as &dyn Implementor);
-    let abst_b = RefinedAbstraction::new(bracket_impl as &dyn Implementor);
+    let abst_p = RefinedAbstraction::new(&ParenImpl);
+    let abst_b = RefinedAbstraction::new(&BracketImpl);
 
     println!("{}", abst_p.convert("YOYO".to_string()));
     abst_b.print_convert_msg("oops".to_string());
