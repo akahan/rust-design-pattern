@@ -1,8 +1,8 @@
 [package]
-name = "rust_design_pattern"
-version = "0.1.0"
 authors = ["lpxxn <mi_duo@live.com>"]
 edition = "2018"
+name = "rust_design_pattern"
+version = "0.1.0"
 
 [[bin]]
 name = "factory"
@@ -11,6 +11,14 @@ path = "./creational/factory.rs"
 [[bin]]
 name = "abstract_factory"
 path = "./creational/abstract_factory.rs"
+
+[[bin]]
+name = "simple_factory"
+path = "./creational/simple_factory.rs"
+
+[[bin]]
+name = "prototype"
+path = "./creational/prototype.rs"
 
 [[bin]]
 name = "builder"
@@ -39,6 +47,22 @@ path = "./behavioral/observer.rs"
 [[bin]]
 name = "chain_of_responsibility"
 path = "./behavioral/chain_of_responsibility.rs"
+
+[[bin]]
+name = "bridge"
+path = "./structural/bridge.rs"
+
+[[bin]]
+name = "composite"
+path = "./structural/composite.rs"
+
+[[bin]]
+name = "facade"
+path = "./structural/facade.rs"
+
+[[bin]]
+name = "flyweight"
+path = "./structural/flyweight.rs"
 
 [[bin]]
 name = "adapter"
