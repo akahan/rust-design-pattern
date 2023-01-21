@@ -3,14 +3,14 @@ use std::collections::HashMap;
 #[derive(Debug)]
 struct Object(String, usize);
 
-struct Fryweight {
+struct Flyweight {
     pool: HashMap<String, Object>,
     counter: usize,
 }
 
-impl Fryweight {
-    fn new() -> Fryweight {
-        Fryweight {
+impl Flyweight {
+    fn new() -> Flyweight {
+        Flyweight {
             pool: HashMap::new(),
             counter: 0,
         }
@@ -29,14 +29,14 @@ impl Fryweight {
 }
 
 fn main() {
-    let mut fryweight = Fryweight::new();
+    let mut flyweight = Flyweight::new();
 
     {
-        let o1 = fryweight.obtain_object("hoge".to_string());
+        let o1 = flyweight.obtain_object("hoge".to_string());
         println!("{:?}", o1);
         o1.1 = 567;
     }
 
-    let o2 = fryweight.obtain_object("hoge".to_string());
+    let o2 = flyweight.obtain_object("hoge".to_string());
     println!("{:?}", o2);
 }
