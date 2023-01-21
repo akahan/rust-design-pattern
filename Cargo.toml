@@ -79,3 +79,7 @@ path = "./structural/proxy.rs"
 [[bin]]
 name = "singleton"
 path = "./creational/singleton.rs"
+
+[[bin]]
+name = "singleton_mutex"
+path = "./creational/singleton_mutex.rs"
